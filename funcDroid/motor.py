@@ -46,28 +46,28 @@ def andar_livre(d,v):
 	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackLeftMotor,d*v*(-1), sim.simx_opmode_oneshot)
 	sim.simxPauseCommunication(glob.clientID, False)
 
-def andar_livre_lado(d,v):
+# def andar_livre_lado(d,v):
+#
+# 	# d = 1 , andar para frente
+# 	# d =-1 , andar para trás
+# 	# v = velocidade
+# 	sim.simxPauseCommunication(glob.clientID, True)
+# 	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontRightMotor,-0+0.5-0, sim.simx_opmode_oneshot)
+# 	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontLeftMotor,-0-0.5+0, sim.simx_opmode_oneshot)
+# 	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackRightMotor,-0-0.5-0, sim.simx_opmode_oneshot)
+# 	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackLeftMotor,-0+0.5+0, sim.simx_opmode_oneshot)
+# 	sim.simxPauseCommunication(glob.clientID, False)
+
+def andar_lado(d,v):
 
 	# d = 1 , andar para frente
 	# d =-1 , andar para trás
 	# v = velocidade
 	sim.simxPauseCommunication(glob.clientID, True)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontRightMotor,d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontLeftMotor,(-1)*d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackRightMotor,(-1)*d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackLeftMotor,d*v, sim.simx_opmode_oneshot)
-	sim.simxPauseCommunication(glob.clientID, False)
-
-def andar_diagonal(v):
-
-	# d = 1 , andar para frente
-	# d =-1 , andar para trás
-	# v = velocidade
-	sim.simxPauseCommunication(glob.clientID, True)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontRightMotor,-1*v*(-1), sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontLeftMotor,1*v*(-1), sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackRightMotor,1*v*(-1), sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackLeftMotor,-1*v*(-1), sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontRightMotor,+v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotFrontLeftMotor,-v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackRightMotor,-v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID, glob.robotBackLeftMotor,+v*d, sim.simx_opmode_oneshot)
 	sim.simxPauseCommunication(glob.clientID, False)
 
 def giro_livre(d,v):
@@ -77,10 +77,10 @@ def giro_livre(d,v):
 	# v = velocidade
 
 	sim.simxPauseCommunication(glob.clientID, True)
-	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotFrontRightMotor,(-1)*d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotFrontLeftMotor,d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotBackRightMotor,(-1)*d*v, sim.simx_opmode_oneshot)
-	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotBackLeftMotor,d*v, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotFrontRightMotor,-v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotFrontLeftMotor,-v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotBackRightMotor,+v*d, sim.simx_opmode_oneshot)
+	sim.simxSetJointTargetVelocity(glob.clientID,glob.robotBackLeftMotor,+v*d, sim.simx_opmode_oneshot)
 	sim.simxPauseCommunication(glob.clientID, False)
 
 def giro_aberto(d,v):

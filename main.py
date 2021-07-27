@@ -4,7 +4,7 @@ import time
 import funcDroid.globalDefs as glob
 import funcDroid.sim as sim
 from funcDroid.garraAlgo import abrir_garra, fechar_garra
-from funcDroid.motor import andar_livre, giro_livre, Stop, andar_em_metros, giro_aberto, andar_livre_lado, andar_diagonal
+from funcDroid.motor import andar_livre, giro_livre, Stop, andar_em_metros, giro_aberto, andar_lado
 from funcDroid.sensor import getColor as le_cor, getDistanceIR as le_distancia
 
 CorEsquerda = glob.color_sensor_Left
@@ -61,10 +61,12 @@ class odiocoopelia:
 
     def main(self, a):
         while a == True:
-            # andar_diagonal(2)
-            andar_livre_lado(1,2)
-            # giro_livre(-1,2)
-            # andar_livre(1,2)
+            # Andar Lado | 1 = Esquerda / -1 = Direita
+            andar_lado(1,2)
+            # Andar Livre | 1 = Para Trás / -1 = Para Frente
+            # andar_livre(-1,2)
+            # Giro Livre | 1 = Sentido Horario / -1 = Sentido Anti-Horario
+            # giro_livre(1,2)
 
 init = odiocoopelia()
 init.main(a)

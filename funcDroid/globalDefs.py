@@ -37,8 +37,8 @@ def init(_clientID, robotname):
 	#Motores
 	[erro, robotFrontLeftMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeA', sim.simx_opmode_blocking)
 	[erro, robotBackLeftMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeB', sim.simx_opmode_blocking)
-	[erro, robotFrontRightMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeB#0', sim.simx_opmode_blocking)
-	[erro, robotBackRightMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeA#0', sim.simx_opmode_blocking)
+	[erro, robotFrontRightMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeD', sim.simx_opmode_blocking)
+	[erro, robotBackRightMotor] = sim.simxGetObjectHandle(clientID, 'OmniWheel45_typeC', sim.simx_opmode_blocking)
 	#Garra
 	[erro, paDireita] = sim.simxGetObjectHandle(clientID, 'Junta_direita', sim.simx_opmode_blocking)
 	[erro, paEsquerda] = sim.simxGetObjectHandle(clientID, 'Junta_esquerda', sim.simx_opmode_blocking)
